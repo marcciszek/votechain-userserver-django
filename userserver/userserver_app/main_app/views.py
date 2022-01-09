@@ -1,3 +1,5 @@
+import json
+
 from django.shortcuts import render, get_object_or_404
 
 from django.http import HttpResponse, JsonResponse
@@ -7,6 +9,8 @@ from django.views.decorators.csrf import requires_csrf_token
 
 import logging, logging.config
 import sys
+import requests
+
 
 LOGGING = {
     'version': 1,
@@ -23,4 +27,7 @@ LOGGING = {
 }
 
 def test(request):
-    return JsonResponse({'foo': 'bar'})
+    post_data = {'foo':'bar'}
+    response = requests.post('http://127.0.0.1:8000/main/test/', data=post_data)
+    logging.config.dictConfig(LOGGING)
+    return JsonResponse(json.loads(response.text),safe=False)
