@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import ContVote
 
-# Register your models here.
+
+@admin.register(ContVote)
+class ContVote(admin.ModelAdmin):
+    list_display = ('vote',)
