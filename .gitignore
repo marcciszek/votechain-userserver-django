@@ -128,5 +128,3 @@ dmypy.json
 # Pyre type checker
 .pyre/
 /block_venv/
-/chainserver/chainserver/main/migrations/
-/userserver/userserver_app/account/migrations/
