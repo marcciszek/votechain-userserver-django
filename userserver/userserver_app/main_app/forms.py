@@ -11,6 +11,7 @@ class ContVoteForm(forms.Form):
         Aus = 4, "Australia"
         Azj = 5, "Azja"
         Eur = 6, "Europa"
+        
 
     vote = forms.ChoiceField(choices=Cont.choices,
                              label="")
