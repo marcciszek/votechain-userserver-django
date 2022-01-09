@@ -7,4 +7,10 @@ urlpatterns = [
     path('test/',
          views.test,
          name='test'),
+    path('voting/',
+             views.voting,
+             name='voting'),
+    path('sendvote/',
+                 views.sendvote,
+                 name='sendvote'),
 ]
