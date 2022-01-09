@@ -1,5 +1,4 @@
 """userserver_app URL Configuration
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.0/topics/http/urls/
 Examples:
@@ -20,4 +19,5 @@ from django.shortcuts import redirect
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('main/', include('main_app.urls', namespace='main_app')),
+    path('', lambda request: redirect('main/', permanent=True)),
 ]
