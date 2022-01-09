@@ -35,3 +35,9 @@ def test(request):
 def voting(request):
     post_data = {'fafaf':'vwsvrrwv'}
     return JsonResponse(post_data,safe=False)
+
+def sendvote(request):
+    logging.config.dictConfig(LOGGING)
+    logging.info("ktos tu jest")
+    logging.info(request.body.decode('utf-8'))
+    return JsonResponse({'boo','far'})
