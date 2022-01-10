@@ -1,0 +1,13 @@
+{% extends "vote_base.html" %}
+
+{% block title %}Głosowanie{% endblock %}
+
+{% block content %}
+    <h1>Głosowanie</h1>
+    <h3>Jaki kontynent chciałbyś odwiedzić najbardziej?</h3>
+    <form action="{% url 'main_app:voting' %}" method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <p><input id = "send-button" type="submit" value="Wyślij głos"></p>
+    </form>
+{% endblock %}

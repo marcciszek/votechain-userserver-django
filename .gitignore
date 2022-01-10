@@ -128,3 +128,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 /block_venv/
+/userserver/env/
+/chainserver/env/
