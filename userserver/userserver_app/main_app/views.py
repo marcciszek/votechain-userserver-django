@@ -30,6 +30,8 @@ LOGGING = {
     }
 }
 
+from . import blockchain
+
 @login_required
 def voting(request):
     if request.method == 'POST':
@@ -47,9 +49,11 @@ def voting(request):
                      'hash': user_hash}
 
         logging.info(post_data)
+        
         requests.post('http://127.0.0.1:8000/main/block/',
                       data=post_data)
-        return HttpResponseRedirect('/account/logout/')
+        #return HttpResponseRedirect('/account/logout/')
+        return JsonResponse({'foo':'bar'})
     else:
         form = ContVoteForm()
         return render(request,
