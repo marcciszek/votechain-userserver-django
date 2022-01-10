@@ -36,18 +36,28 @@ def block(request):
     if request.method == "POST":
         logging.info(request.POST)
         user = request.POST['user']
+        #todo: remove user
         vote = request.POST['vote']
+        hash = request.POST['hash']
         log(user)
         log(vote)
         log("xxx")
-        return JsonResponse({"foo":"bar"})
         # add data to blockchain
         blc = blockchain.Blockchain()
         blc.loadFromFile()
-        if blc.didUserVote(user):
+        log(blc.length)
+        if not(blc.didUserVote(hash)):
             log("vote added.")
-            blc.add_block(Block(blc.length,int(vote),int(user)))
-            blc.saveToFile()
+            try:
+                blc.add_block(blockchain.Block(blc.length,int(vote),str(hash)))
+                log(blc.length)
+                log("www")
+                a = blc.saveToFile()
+                log("uuu")
+                log(str(a))
+                log("zzz")
+            except Exception as error:
+                log(str(error))
         else:
             log("user had already voted.")
         '''
