@@ -33,33 +33,32 @@ from . import blockchain
 @csrf_exempt
 def block(request):
     logging.config.dictConfig(LOGGING)
+    if request.method == "GET":
+        #when client connects within url bar
+        logging.info("client")
+        return HttpResponseNotFound("Nic tutaj nie ma")
+
     if request.method == "POST":
-        logging.info(request.POST)
-        user = request.POST['user']
-        #todo: remove user
+        #logging.info(request.POST)
+        #user = request.POST['user']
         vote = request.POST['vote']
         hash = request.POST['hash']
-        log(user)
-        log(vote)
-        log("xxx")
+
         # add data to blockchain
         blc = blockchain.Blockchain()
         blc.loadFromFile()
-        log(blc.length)
+        #log(blc.length)
         if not(blc.didUserVote(hash)):
             log("vote added.")
             try:
                 blc.add_block(blockchain.Block(blc.length,int(vote),str(hash)))
-                log(blc.length)
-                log("www")
-                a = blc.saveToFile()
-                log("uuu")
-                log(str(a))
-                log("zzz")
+                #log(blc.length)
+                result = blc.saveToFile()
             except Exception as error:
                 log(str(error))
         else:
             log("user had already voted.")
+        #poniżej
         '''
         a = blockchain.Blockchain()
         x = blockchain.Block(1, 2, "afasef")
@@ -103,7 +102,3 @@ def block(request):
         #jay = json.loads(text)
         #logging.info(jay['glossary']['title'])
         '''
-    if request.method == "GET":
-        #when client connects within url bar
-        logging.info("client")
-        return HttpResponseNotFound("Nic tutaj nie ma")

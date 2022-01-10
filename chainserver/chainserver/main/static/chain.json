@@ -10,33 +10,9 @@
         },
         {
             "index": 1,
-            "nonce": 41,
+            "nonce": 302,
             "previous_hash": "f8fa9e0a2a5caf9905ea0cb995370831088e82a0bb1f2a213c940e8bdaf0320c",
-            "timestamp": 1641850401.173565,
-            "user_hash": "afasef",
-            "vote": 2
-        },
-        {
-            "index": 2,
-            "nonce": 198,
-            "previous_hash": "00284a14f2b4351d1410017a9fd2523cac26518219d9d215fe498a4266e544eb",
-            "timestamp": 1641850401.173565,
-            "user_hash": "wgegre",
-            "vote": 1
-        },
-        {
-            "index": 3,
-            "nonce": 222,
-            "previous_hash": "00908b55d69d14d976cded12e0efde32d24b672fb6164a79782b8552f202fe29",
-            "timestamp": 1641850401.177566,
-            "user_hash": "fefefe",
-            "vote": 1
-        },
-        {
-            "index": 4,
-            "nonce": 999,
-            "previous_hash": "00c0ad53866968b696f21a7c11ab11cf2b42e8e863a81e55cff591ca07e456f7",
-            "timestamp": 1641851699.9858687,
+            "timestamp": 1641852036.4176836,
             "user_hash": "pbkdf2_sha256$260000$BlockChain$0J7XVvd5nF/Hw96+92z5844z56RPBl4+c0TQzne4LX8=",
             "vote": 3
         }
