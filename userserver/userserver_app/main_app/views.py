@@ -30,6 +30,8 @@ LOGGING = {
     }
 }
 
+from . import blockchain
+
 @login_required
 def voting(request):
     if request.method == 'POST':
@@ -39,16 +41,19 @@ def voting(request):
         hasher = PBKDF2PasswordHasher()
         #salt = ''.join(choices(string.ascii_letters + string.digits, k=10))
         salt = "BlockChain"
-        user_hash = hasher.encode(str(request.user), salt)
+        hidden_text = "Bl0ck!Ch4in"
+        user_hash = hasher.encode(hidden_text+str(request.user), salt)
 
         post_data = {'user': str(request.user),
                      'vote': form['vote'].value(),
                      'hash': user_hash}
 
         logging.info(post_data)
+        
         requests.post('http://127.0.0.1:8000/main/block/',
                       data=post_data)
-        return HttpResponseRedirect('/account/logout/')
+        #return HttpResponseRedirect('/account/logout/')
+        return JsonResponse({'foo':'bar'})
     else:
         form = ContVoteForm()
         return render(request,

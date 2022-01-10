@@ -1,0 +1,21 @@
+{
+    "chain": [
+        {
+            "index": 0,
+            "nonce": 0,
+            "previous_hash": "genesis_block",
+            "timestamp": null,
+            "user_hash": "nohash",
+            "vote": "novote"
+        },
+        {
+            "index": 1,
+            "nonce": 302,
+            "previous_hash": "f8fa9e0a2a5caf9905ea0cb995370831088e82a0bb1f2a213c940e8bdaf0320c",
+            "timestamp": 1641852036.4176836,
+            "user_hash": "pbkdf2_sha256$260000$BlockChain$0J7XVvd5nF/Hw96+92z5844z56RPBl4+c0TQzne4LX8=",
+            "vote": 3
+        }
+    ],
+    "difficulty": 2
+}
