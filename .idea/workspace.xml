@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d977c4a4-1923-4e9f-9ed0-798b1fe99a4c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/chainserver/chainserver/main/blockchain.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chainserver/chainserver/main/static/chain.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/userserver/userserver_app/main_app/blockchain/blockchain.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chainserver/chainserver/main/blockchain.py" beforeDir="false" afterPath="$PROJECT_DIR$/chainserver/chainserver/main/blockchain.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chainserver/chainserver/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/chainserver/chainserver/main/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userserver/userserver_app/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/userserver/userserver_app/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userserver/userserver_app/main_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/userserver/userserver_app/main_app/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

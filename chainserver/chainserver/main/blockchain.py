@@ -21,12 +21,6 @@ class Block:
                ", user: "+str(self.user_hash)+", prev: "+str(self.previous_hash)+\
                ", nonce: "+str(self.nonce)+", time: "+str(self.timestamp)
 
-try:
-    import importlib.resources as pkg_resources
-except ImportError:
-    # Try backported to PY<37 `importlib_resources`.
-    import importlib_resources as pkg_resources
-
 import pkgutil
 from . import static
 
@@ -82,6 +76,12 @@ class Blockchain:
         return last block from the chain
         """
         return self.chain[-1]
+    
+    def didUserVote(self,hashuser):
+        for el in self.chain:
+            if el.user_hash == hashuser:
+                return True
+        return False
 
     @property
     def length(self):

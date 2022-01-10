@@ -37,7 +37,19 @@ def block(request):
         logging.info(request.POST)
         user = request.POST['user']
         vote = request.POST['vote']
+        log(user)
+        log(vote)
+        log("xxx")
+        return JsonResponse({"foo":"bar"})
         # add data to blockchain
+        blc = blockchain.Blockchain()
+        blc.loadFromFile()
+        if blc.didUserVote(user):
+            log("vote added.")
+            blc.add_block(Block(blc.length,int(vote),int(user)))
+            blc.saveToFile()
+        else:
+            log("user had already voted.")
         '''
         a = blockchain.Blockchain()
         x = blockchain.Block(1, 2, "afasef")
@@ -48,6 +60,7 @@ def block(request):
         #a.add_block(z)
         #a.saveToFile()
         '''
+        '''
         a.loadFromFile()
         log("xxx")
         for x in a.chain:
@@ -56,6 +69,7 @@ def block(request):
 
         if a.length>1:
             a.saveToFile()
+        '''
         '''
         a.add_block(x)
         a.add_block(y)
